@@ -1,0 +1,14 @@
+@import '_normalize.scss';
+@import '_grids-layouts.scss';
+@import '_fonts.scss';
+@import '_colors.scss';
+// @import '_layouts.scss';
+
+
+* {
+    box-sizing: border-box;
+}
+
+  body {
+      font-family: $font-spartan-bold;
+  }
