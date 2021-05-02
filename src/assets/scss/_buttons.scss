@@ -1,0 +1,138 @@
+.btn {
+    display: inline-block;
+    padding: 14px 15px 15px 15px;
+    font-size: 12px;
+    letter-spacing: -0.25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn__1 {
+    display: inline-block;
+    padding: 5px 5px 5px 5px;
+    font-size: 12px;
+    letter-spacing: -0.25px;
+    border-radius: 25px;
+    color: $white;
+    background-color: $blue;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &--media {
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        // padding: 5px;
+        margin-right: 15px;
+        border-radius: 50%;
+        background-color: $white;
+
+        img {
+            transform: translateY(10px);
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    &--text {
+        display: inline-block;
+        padding-right: 10px;
+        transform: translateY(10px);
+    }
+
+    &:hover {
+        background-color: lighten($blue, 10%);
+    }
+}
+
+.btn__2 {
+    color: $white;
+    background-color: $blue;
+
+    &:hover {
+        background-color: lighten($blue, 10%);
+    }
+}
+
+.btn__3 {
+    
+}
+
+.btn__4 {
+    
+}
+
+.btn__5 {
+    color: $white;
+    background-color: $red;
+
+    &:hover {
+        background-color: lighten($red, 10%);
+    }
+}
+
+.btn__6 {
+    color: $text-secondary;
+    background-color: $bg-secondary-light;
+
+    &:hover {
+        background-color: darken($bg-secondary-light, 10%);
+    }
+}
+
+// themes
+
+#app {
+    .btn__3 {
+        color: $text-secondary;
+        background-color: $bg-secondary-light;
+
+        &:hover {
+            background-color: darken($bg-secondary-light, 10%);
+        }
+    }
+
+    .btn__4 {
+        color: $gray-b-light;
+        background-color: $bg-secondary-light;
+
+        &:hover {
+            background-color: #0C0E16;
+        }
+    }
+}
+
+#app.moon {
+
+    .btn__3 {
+        color: $text-secondary-light;
+        background-color: $navy-light;
+
+        &:hover {
+            background-color: lighten($navy-light, 80%);
+        }
+    }
+
+    .btn__4 {
+        color: $white;
+        background-color: #373B53;
+
+        &:hover {
+            background-color: #373B53;
+        }
+    }
+}
+
+
+
+// <button class="btn__1"> 
+// <span class="btn__1--media">
+//   <img :src="require('@/assets/images/icon-plus.svg')" alt="icon plus">
+//  </span>
+//  <span class="btn__1--text">
+//    button
+//  </span>
+// </button>

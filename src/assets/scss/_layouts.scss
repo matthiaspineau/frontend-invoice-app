@@ -1,0 +1,81 @@
+body {
+    font-family: $font-spartan-medium;
+    
+}
+
+h1, h2, h3 {
+    font-family: $font-spartan-bold;
+    margin: 0px 0px 0px 0px;
+}
+
+h1 {
+    font-size: 20px;
+    letter-spacing: -0.63px;
+
+    @include md-only{
+        font-size: 32px;
+        letter-spacing: -1px;
+        // line-height: 36px;
+    }
+}
+
+h2 {
+    font-size: 20px;
+    // line-height: 22px;
+    letter-spacing: -0.63px;
+
+    @include md-only{
+        font-size: 20px;
+        // line-height: 22px;
+        letter-spacing: -0.63px;
+    }
+}
+
+h3 {
+    font-size: 12px;
+    // line-height: 15px;
+    letter-spacing: -0.25px;
+
+    @include md-only{
+        font-size: 16px;
+        // line-height: 24px;
+        letter-spacing: -0.8px;
+    }
+}
+
+p {
+    font-size: 11px;
+    // line-height: 18px;
+    letter-spacing: -0.23px;
+
+    @include md-only{
+        font-size: 12px;
+        // line-height: 15px;
+        letter-spacing: -0.25px;
+    }
+}
+
+span {
+    font-size: 11px;
+    // line-height: 18px;
+    letter-spacing: -0.23px;
+
+    @include md-only{
+        font-size: 12px;
+        // line-height: 15px;
+        letter-spacing: -0.25px;
+    }
+}
+
+.text-lg {
+    font-size: $font-spartan-bold;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: -0.31px;
+}
+
+.text-sm {
+    font-size: $font-spartan-medium;
+    font-size: 12px;
+    letter-spacing: -0.25px;
+}

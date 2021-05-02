@@ -1,0 +1,56 @@
+#app {
+    background-color: $bg-light-gray;
+
+    .nav {
+        background-color: $navy-light;
+    }
+
+    // .text--gray {
+    //     color: $blue-gray;
+    // }
+    h1, h2, h3 {
+        color: $text-primary;
+    }
+
+    .text--primary {
+        color: $text-primary;
+    }
+
+    .text--secondary {
+        color: $text-secondary;
+    }
+
+    .text--blue {
+        color: $blue;
+    }
+}
+
+#app.moon {
+
+    background-color: $bg-dark-black;
+
+
+    h1, h2, h3 {
+        color: $text-primary-light;
+    }
+    
+    // p {
+    //     color: $text-secondary-light;
+    // }
+
+    .nav {
+        background-color: $navy-dark;
+    }
+    
+    .text--primary {
+        color: $text-primary-light;
+    }
+
+    .text--secondary {
+        color: $text-secondary-light;
+    }
+
+    .text--spe {
+
+    }
+}
