@@ -1,6 +1,6 @@
 body {
     font-family: $font-spartan-medium;
-    
+    font-size: 12px;
 }
 
 h1, h2, h3 {
@@ -45,27 +45,27 @@ h3 {
 
 p {
     font-size: 11px;
-    // line-height: 18px;
+    line-height: 18px;
     letter-spacing: -0.23px;
 
     @include md-only{
         font-size: 12px;
-        // line-height: 15px;
+        line-height: 15px;
         letter-spacing: -0.25px;
     }
 }
 
-span {
-    font-size: 11px;
-    // line-height: 18px;
-    letter-spacing: -0.23px;
+// span {
+//     font-size: 11px;
+//     // line-height: 18px;
+//     letter-spacing: -0.23px;
 
-    @include md-only{
-        font-size: 12px;
-        // line-height: 15px;
-        letter-spacing: -0.25px;
-    }
-}
+//     @include md-only{
+//         font-size: 12px;
+//         // line-height: 15px;
+//         letter-spacing: -0.25px;
+//     }
+// }
 
 .text-lg {
     font-size: $font-spartan-bold;
@@ -78,4 +78,8 @@ span {
     font-size: $font-spartan-medium;
     font-size: 12px;
     letter-spacing: -0.25px;
+}
+
+.font--bold {
+    font-weight: bold;
 }

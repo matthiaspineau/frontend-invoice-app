@@ -32,7 +32,13 @@
           </div>
 
           <div class="header__filter">
-            Filter by statut
+            Filter by statut{{filterArgInvoices}}
+            <select name="" id="" v-model="filterArgInvoices">
+              <option value="">All</option>
+              <option value="draft">Draft</option>
+              <option value="paid">Paid</option>
+              <option value="pending">Pending</option>
+            </select>
           </div>
 
           <button class="btn btn__2">New invoices</button>
@@ -47,12 +53,15 @@
             </div>
             <div class="empty__text">
               <h3>There is nothing here</h3>
-              <p class="text--secondary">Create an invoice by clicking the <br>New Invoice button and get started</p>
+              <p class="text--secondary">Create an invoice by clicking the <br><span class="font--bold">New Invoice</span> button and get started</p>
             </div>
           </div>
           <div v-else>
+            <!-- Invoice -->
             <div class="wrap__invoices">
-              invoices
+              <invoice-item v-for="(invoice, index) in getInvoices" :key="index" 
+              :theme="theme"
+              :data="invoice"></invoice-item>
             </div>
           </div>
         </section>
@@ -65,14 +74,16 @@
 </template>
 
 <script>
+import InvoiceItem from './components/article/InvoiceItem.vue';
+// import { mapGetters } from 'vuex';
 
 
 export default {
   data() {
     return {
       theme: 'sun',
-      db: [],
-      
+      db: ['1'],
+      filterArgInvoices: null
     }
   },
   methods: {
@@ -81,12 +92,16 @@ export default {
     }
   },
   computed: {
+    getInvoices() {
+      return this.$store.getters.getInvoiceByStatus(this.filterArgInvoices)
+    },
     nbInvoices() {
       return this.db.length < 1 ? 'No invoices' : this.db.length + ' invoices'
     } 
   },
   name: 'App',
   components: {
+    InvoiceItem
   }
 }
 </script>

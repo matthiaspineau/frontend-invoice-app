@@ -237,6 +237,15 @@ export default new Vuex.Store({
         }
       ]
   },
+  getters: {
+    getInvoiceByStatus: (state) => (statut) => {
+      if (statut === null || statut === undefined || statut === '') {
+        return state.invoices
+      } else {
+        return state.invoices.filter(invoice => invoice.status === statut)
+      }
+    }
+  },
   mutations: {
   },
   actions: {
