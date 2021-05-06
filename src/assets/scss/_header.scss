@@ -4,3 +4,18 @@
     align-items: center;
     
 }
+
+.header__filter--label {
+    margin-right: 5px;
+    font-weight: bold;
+
+    span {
+        display: none;
+    }
+
+    @include md-only{
+        span {
+            display: inline-block;
+        }
+    }
+}

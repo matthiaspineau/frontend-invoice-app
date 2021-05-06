@@ -32,3 +32,9 @@ $grid-breakpoints: (
         @content;
     }
 }
+
+@mixin xl-only {
+    @media screen and (min-width: map-get($grid-breakpoints, xl)){
+        @content;
+    }
+}

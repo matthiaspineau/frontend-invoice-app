@@ -22,7 +22,7 @@
     margin-top: 25px;
 }
 
-.invoice {
+.list--invoice {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     // grid-gap: 10px;
@@ -89,10 +89,54 @@
         justify-self: end;
         align-self: center;
         display: inline-block;
-        padding: 5px 8px;
+        width: 100px;
+        padding: 8px 6px 8px 10px;
+        text-align: center;
         border-radius: 5px;
+
+        span {
+            position: relative;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 4px;
+                left: -10px;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__status--paid {
         color: #33d69f;
         background-color: rgba(51, 214, 159, 0.6);
+        span {     
+            &::before {
+                background-color: #33d69f;
+            }
+        }
+    }
+
+    &__status--pending {
+        color: #FF8F00;
+        background-color: rgba(255, 143, 0, 0.6);
+        span {     
+            &::before {
+                background-color: #FF8F00;
+            }
+        }
+    }
+
+    &__status--draft {
+        color: #373B53;
+        background-color: rgba(55, 59, 83, 0.6);
+        span {     
+            &::before {
+                background-color: #373B53;
+            }
+        }
     }
 
     &__arrow {
@@ -114,27 +158,28 @@
             grid-column: 1;
             grid-row: inherit;
             margin-bottom: inherit;
-    
+            width: 55px;
         }
     
         &__date {
             grid-column: 2;
             grid-row: inherit;
-
+            width: 100px;
         }
     
         &__name {
             grid-column: 3;
             grid-row: inherit;
             justify-self: inherit;
-
+            width: 120px;
         }
 
         &__amount {
             grid-column: 4;
             grid-row: inherit;
             justify-self: flex-end;
-
+            width: 120px;
+            text-align: right;
         }
     
     
@@ -153,7 +198,7 @@
     }
 }
 
-.invoice.moon {
+.list--invoice.moon {
     
     background-color: #1E2139;
     border: 1px solid #1E2139;
@@ -162,7 +207,7 @@
         border: 1px solid #7c5dfa;
     }
 
-    .invoice__ref {
+    .list--invoice__ref {
     
         &--d {
             color: #7e88c3;
@@ -173,21 +218,28 @@
         }
     }
 
-    .invoice__date {
+    .list--invoice__date {
         color: #DFE3FA;
     }
 
-    .invoice__amount {
+    .list--invoice__amount {
         color: #fff;
     }
 
-    .invoice__name {
+    .list--invoice__name {
         color: #fff;
     }
 
-    .invoice__status {
-        color: #33d69f;
-        background-color: rgba(51, 214, 159, 0.6);
+    
+
+    .list--invoice__status--draft {
+        color: #dfe3fa;
+        background-color: rgba(223, 227, 250, 0.6);
+        span {     
+            &::before {
+                background-color: #dfe3fa;
+            }
+        }
     }
 
 }

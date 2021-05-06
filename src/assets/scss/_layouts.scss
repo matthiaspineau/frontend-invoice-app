@@ -66,6 +66,40 @@ p {
 //         letter-spacing: -0.25px;
 //     }
 // }
+.text--xs {
+    font-size: $font-spartan-medium;
+    font-size: 11px;
+    letter-spacing: -0.23px;
+}
+
+.text--sm {
+    font-size: $font-spartan-medium;
+    font-size: 12px;
+    list-style: 15px;
+    letter-spacing: -0.25px;
+}
+
+.text--md {
+    font-size: $font-spartan-medium;
+    font-size: 12px;
+    list-style: 15px;
+    letter-spacing: -0.25px;
+}
+
+.text--lg {
+    font-size: $font-spartan-medium;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.31px;
+}
+
+.text-sm {
+    font-size: $font-spartan-medium;
+    font-size: 12px;
+    list-style: 15px;
+    letter-spacing: -0.25px;
+}
 
 .text-lg {
     font-size: $font-spartan-bold;
@@ -74,12 +108,24 @@ p {
     letter-spacing: -0.31px;
 }
 
-.text-sm {
-    font-size: $font-spartan-medium;
-    font-size: 12px;
-    letter-spacing: -0.25px;
+.mb-5px {
+    margin-bottom: 5px;
 }
+
+.text-xl {
+
+}
+
 
 .font--bold {
     font-weight: bold;
+}
+
+.d-block {
+    display: block;
+}
+
+.text--20 {
+    font-size: 20px;
+    
 }

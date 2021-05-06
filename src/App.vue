@@ -21,6 +21,12 @@
        </div>
      </nav>
 
+    <!-- Components: View-invoice-item -->
+    <component :is="componentviewIncoiceItemActive" 
+     @close-view-incoice-item="closeViewIncoice"
+     :invoice="invoiceEdit"
+     ></component>
+
     <!-- Main -->
      <main class="main container">
 
@@ -28,11 +34,11 @@
         <header class="header">
           <div class="header__heading">
             <h1>Invoices</h1>
-            <span class="text--secondary">{{ nbInvoices }}</span>
+            <span class="text--secondary">There are {{ nbInvoices }} total invoices</span>
           </div>
 
           <div class="header__filter">
-            Filter by statut{{filterArgInvoices}}
+            <label for="" class="header__filter--label text--primary">Filter <span>by status</span></label>
             <select name="" id="" v-model="filterArgInvoices">
               <option value="">All</option>
               <option value="draft">Draft</option>
@@ -59,14 +65,13 @@
           <div v-else>
             <!-- Invoice -->
             <div class="wrap__invoices">
-              <invoice-item v-for="(invoice, index) in getInvoices" :key="index" 
+              <list-invoice-item v-for="(invoice, index) in getInvoices" :key="index" 
               :theme="theme"
-              :data="invoice"></invoice-item>
+              :data="invoice"
+              @show-invoice="editInvoice(invoice)"></list-invoice-item>
             </div>
           </div>
         </section>
-
-    
 
      </main>
 
@@ -74,7 +79,8 @@
 </template>
 
 <script>
-import InvoiceItem from './components/article/InvoiceItem.vue';
+import ListInvoiceItem from './components/invoice/ListInvoiceItem.vue';
+import ViewInvoiceItem from './components/invoice/ViewInvoiceItem.vue';
 // import { mapGetters } from 'vuex';
 
 
@@ -83,25 +89,36 @@ export default {
     return {
       theme: 'sun',
       db: ['1'],
-      filterArgInvoices: null
+      filterArgInvoices: null,
+      componentviewIncoiceItemActive: null,
+      invoiceEdit: {}
     }
   },
   methods: {
     switchThemes() {
-      this.theme = this.theme == 'sun' ? 'moon' : 'sun'
+      this.theme = this.theme == 'sun' ? 'moon' : 'sun';
+    },
+    editInvoice(item) {
+      this.invoiceEdit = item
+      this.componentviewIncoiceItemActive = ViewInvoiceItem;
+    },
+    closeViewIncoice() {
+      console.log('close')
+      this.componentviewIncoiceItemActive = null;
     }
   },
   computed: {
     getInvoices() {
-      return this.$store.getters.getInvoiceByStatus(this.filterArgInvoices)
+      return this.$store.getters.getInvoiceByStatus(this.filterArgInvoices);
     },
     nbInvoices() {
-      return this.db.length < 1 ? 'No invoices' : this.db.length + ' invoices'
+      return this.getInvoices.length < 1 ? 'No invoices' : this.getInvoices.length
     } 
   },
   name: 'App',
   components: {
-    InvoiceItem
+    ListInvoiceItem,
+    ViewInvoiceItem
   }
 }
 </script>

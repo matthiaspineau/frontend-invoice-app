@@ -22,11 +22,28 @@ $white: #fff;
 $text-primary: #0c0e16;
 $text-primary-light: hsl(0, 0%, 100%);
 $text-secondary: rgb(126, 136, 196);
-$text-secondary-light: rgb(223, 227, 250);
+$text-secondary-light: hsl(231, 73%, 93%);
 
 
-$bg-primary: hsl(228, 29%, 7%);
+$bg-primary: #0d0f17;
 $bg-secondary: hsl(231, 37%, 63%);
-$bg-secondary-light: hsl(231, 72%, 93%);
+$bg-secondary-light: rgb(224, 228, 250);
 
 $bg-white: #fff;
+
+// ---------------
+$bg-page-sun: #f8f8fb;
+$bg-page-moon: #141625;
+
+$bg-block-sun: #fff;
+$bg-block-moon: #1e2139;
+
+$bg-sub-block-sun: #f9fafe;
+$bg-sub-block-moon: #252945;
+
+// -----------------
+$text--block--primary--sun: #0c0e16;
+$text--block--primary--moon: #fff;
+
+$text--block--secondary--sun: #7e88c3;
+$text--block--secondary--moon: #dfe3fa;

@@ -1,16 +1,17 @@
 <template>
-    <div class="invoice" 
+    <div class="list--invoice" 
     :class="{ 'moon' : theme == 'moon' }"
-    :data-id="data.id">
-        <div class="invoice__ref">
-            <span class="invoice__ref--d">#</span>
-            <span class="invoice__ref--id">{{ data.id }}</span>
+    :data-id="data.id"
+    @click="showInvoice">
+        <div class="list--invoice__ref">
+            <span class="list--invoice__ref--d">#</span>
+            <span class="list--invoice__ref--id">{{ data.id }}</span>
         </div>
-        <div class="invoice__date">{{ data.createdAt }}</div>
-        <div class="invoice__name">{{ data.clientName }}</div>
-        <div class="invoice__amount">${{ data.total }}</div>
-        <div class="invoice__status">{{ data.status }}</div>
-        <img class="invoice__arrow" :src="require('@/assets/images/icon-arrow-right.svg')" alt="icon arrow">
+        <div class="list--invoice__date">{{ data.createdAt }}</div>
+        <div class="list--invoice__name">{{ data.clientName }}</div>
+        <div class="list--invoice__amount">${{ data.total }}</div>
+        <div class="list--invoice__status" :class="'list--invoice__status--'+data.status"><span>{{ data.status }}</span></div>
+        <img class="list--invoice__arrow" :src="require('@/assets/images/icon-arrow-right.svg')" alt="icon arrow">
     </div>
 </template>
 
@@ -59,6 +60,11 @@ export default {
             }
         }
     },
-    name: 'InvoiceItem'
+    methods: {
+        showInvoice() {
+            this.$emit('show-invoice')
+        }
+    },
+    name: 'ListInvoiceItem'
 }
 </script>

@@ -12,6 +12,18 @@
         color: $text-primary;
     }
 
+    .bg--page {
+       background-color: $bg-page-sun; 
+    }
+
+    .bg--block {
+        background-color: $bg-block-sun; 
+    }
+
+    .bg--sub--block {
+        color: $bg-sub-block-sun; 
+    }
+
     .text--primary {
         color: $text-primary;
     }
@@ -22,6 +34,14 @@
 
     .text--blue {
         color: $blue;
+    }
+
+    .text--block--primary {
+        color: $text--block--primary--sun
+    }
+
+    .text--block--secondary {
+        color: $text--block--secondary--sun
     }
 }
 
@@ -50,7 +70,34 @@
         color: $text-secondary-light;
     }
 
-    .text--spe {
+    .text--block--primary {
+        color: $text--block--primary--moon
+    }
 
+    .text--block--secondary {
+        color: $text--block--secondary--moon
+    }
+
+    .bg--page {
+        background-color: $bg-page-moon; 
+    }
+ 
+    .bg--block {
+        background-color: $bg-block-moon; 
+    }
+ 
+    .bg--sub--block {
+        background-color: $bg-sub-block-moon; 
+    }
+
+    .invoice--table__row {
+        background-color: #252945;
+        // color: #fff;
+    }
+
+    .invoice--table__total {
+        background-color: #0c0e16;
+
+        color: #fff;
     }
 }
